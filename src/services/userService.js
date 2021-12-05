@@ -1,17 +1,38 @@
-export default class UserService{
-    constructor(loggerService){
-        this.users=[]
-        this.loggerService=loggerService
-    }
-    add(user){
-        this.users.push(user)
-        this.loggerService.log(user)
-    }
+import { users } from "../data/users.js";
 
-    list(){
-        return this.users
+export default class UserService {
+  constructor(loggerService) {
+    this.employees = [];
+    this.customers = [];
+    this.errors=[];
+    this.loggerService = loggerService;
+  }
+
+  load() {
+    for (const user of users) {
+      switch (user.type) {
+        case "customer":
+            this.customers.push(user)
+          break;
+        case "employee":
+            this.employees.push(user)
+          break;
+        default:
+            this.errors.push("Wrong user type")
+          break;
+      }
     }
-    getBy(id){
-        return this.users.find(u=>u.id===id)
-    }
+  }
+
+  add(user) {
+    //this.users.push(user)
+    this.loggerService.log(user);
+  }
+
+  list() {
+    //return this.users
+  }
+  getBy(id) {
+    //return this.users.find(u=>u.id===id)
+  }
 }

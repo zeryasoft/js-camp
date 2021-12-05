@@ -19,7 +19,7 @@ let sayHello2=function () {
 sayHello2();
 
 function addToCart2(productName,quantity,unitPrice) {
-    
+    console.log("sepete eklendi : ürün :"+productName + " adet/kg : "+quantity +" fiyatı : "+unitPrice);
 }
 
 addToCart2("Elma",2,5);
@@ -82,9 +82,9 @@ let numbers=[20,30,2,60,4]
 console.log(Math.max(...numbers))//... spread=> ayrıştırıyor
 
 let [icAnadolu,marmara,karadeniz,[icAnadoluSehirleri]]=[
-    {name:"İç Anadolu",population:"20M"},
+    {name:"İç Anadolu",population:"21M"},
     {name:"Marmara",population:"30M"},
-    {name:"Karadeniz",population:"10M"},
+    {name:"Karadeniz",population:"11M"},
     [
         ["Ankara","Konya"],
         ["İstanbul","Bursa"],
